@@ -1,25 +1,32 @@
 #include <stdio.h>
 
 int main() {
-    int num, i, sum = 0;
+    int num, largestPrime = 0;
 
     // Input number
     printf("Enter a number: ");
     scanf("%d", &num);
 
-    // Find sum of proper divisors
-    for(i = 1; i < num; i++) {
-        if(num % i == 0) {
-            sum += i;
+    // Divide by 2 until possible
+    while(num % 2 == 0) {
+        largestPrime = 2;
+        num /= 2;
+    }
+
+    // Check odd factors
+    for(int i = 3; i * i <= num; i += 2) {
+        while(num % i == 0) {
+            largestPrime = i;
+            num /= i;
         }
     }
 
-    // Check perfect number
-    if(sum == num) {
-        printf("%d is a Perfect Number.\n", num);
-    } else {
-        printf("%d is not a Perfect Number.\n", num);
+    // If remaining number is prime
+    if(num > 2) {
+        largestPrime = num;
     }
+
+    printf("Largest Prime Factor = %d\n", largestPrime);
 
     return 0;
 }
