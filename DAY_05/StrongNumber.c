@@ -4,13 +4,20 @@ int main() {
     int num, temp, digit;
     int sum = 0, fact, i;
 
-    // Input number
     printf("Enter a number: ");
     scanf("%d", &num);
 
     temp = num;
 
-    // Calculate sum of factorials of digits
+    /*
+        Logic:
+        1. Extract each digit of the number.
+        2. Find factorial of each digit.
+        3. Add all factorials.
+        4. If sum equals original number,
+           then it is a Strong Number.
+    */
+
     while(temp > 0) {
         digit = temp % 10;
 
@@ -23,12 +30,10 @@ int main() {
         temp /= 10;
     }
 
-    // Check strong number
-    if(sum == num) {
-        printf("%d is a Strong Number.\n", num);
-    } else {
-        printf("%d is not a Strong Number.\n", num);
-    }
+    if(sum == num)
+        printf("%d is a Strong Number.", num);
+    else
+        printf("%d is not a Strong Number.", num);
 
     return 0;
 }
