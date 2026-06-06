@@ -6,7 +6,7 @@ int main()
     long long result = 1;
 
     printf("enter base (x): ");
-    scan("%d",&x);
+    scanf("%d",&x);
 
     printf("Enter power (n): ");
     scanf("%d", &n);
