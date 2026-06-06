@@ -1,19 +1,20 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
+int main()
+{
     int x, n;
     long long result = 1;
 
-    printf("Enter base (x): ");
-    scanf("%d", &x);
+    printf("enter base (x): ");
+    scan("%d",&x);
 
     printf("Enter power (n): ");
     scanf("%d", &n);
 
-    // Logic:
+  /*Logic:
     // Multiply x by itself n times.
     // Start result from 1 because
-    // any number raised to power 0 is 1.
+    // any number raised to power 0 is  */
 
     for (int i = 1; i <= n; i++) {
         result = result * x;
