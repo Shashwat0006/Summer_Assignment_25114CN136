@@ -5,11 +5,11 @@ int main ()
 int num , count = 0;
 
    printf("enter a number : ");
-    scan("%d", &num);
+    scanf("%d", &num);
     /*Logic:
      Check the last bit using num % 2.
     If it is 1, increment count.
-    */ Right shift the number by dividing by 2.
+    Right shift the number by dividing by 2.*/
 
     while (num > 0) {
         if (num % 2 == 1) {
