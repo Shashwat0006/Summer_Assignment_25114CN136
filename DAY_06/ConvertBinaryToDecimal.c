@@ -1,25 +1,33 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
-    long long binary;
-    int decimal = 0, base = 1, remainder;
+int main()
+{
+    long long bin;
+    int dec = 0;
+    int power = 1;
+    int digit;
 
-    printf("Enter a binary number: ");
-    scanf("%lld", &binary);
+    printf("Enter The Binary Number :");
+    scanf("%lld", &bin);
 
-    // Logic:
-    // Extract each digit from right to left.
-    // Multiply digit by corresponding power of 2.
-    // Add the result to decimal value.
+    /*
+        Logic:
+        Take the binary number digit by digit from right to left
 
-    while (binary > 0) {
-        remainder = binary % 10;
-        decimal = decimal + (remainder * base);
-        base = base * 2;
-        binary = binary / 10;
+        Multiply each digit with its corresponding power of 2
+
+        Add the result to get the decimal number
+    */
+
+    while (bin != 0)
+    {
+        digit = bin % 10;       // Extract last digit
+        dec = dec + digit * power;
+      power = power*2;      // Next power of 2
+        bin = bin / 10;       
     }
 
-    printf("Decimal Equivalent: %d\n", decimal);
+    printf("Decimal Number = %d\n", dec);
 
-    return 0;
+    
 }
