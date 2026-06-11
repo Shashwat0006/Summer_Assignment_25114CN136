@@ -2,8 +2,7 @@
 
 int main()
 {
-    int i, j, n = 5;
-
+    int i , j , n =5 ;
     // Outer loop controls rows
     for(i = 1; i <= n; i++)
     {
