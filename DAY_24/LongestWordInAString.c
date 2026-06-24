@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<string.h>
+
+int main() {
+    char str[200];
+
+    printf("Enter sentence");
+    fgets(str,sizeof(str),stdin);
+
+    char longest[100]="";
+    char word[100];
+    int i=0, j=0;
+
+    // Logic:
+    // Extract each wordand compare its length
+    // with the current longest word.
+    while (1) {
+
+        if (str[i] == ' ' || str[i] == '\0' || str[i] == '\n') {
+
+            word[j]='\0';
+
+            if (strlen(word)>strlen(longest))
+                strcpy(longest,word);
+
+            j=0;
+            if (str[i]=='\0'||str[i]=='\n')
+                break;
+        }
+        else {
+            word[j++]=str[i];
+        }
+
+          i++;
+    }
+
+    printf("Longest word:%s\n",longest);
+
+   
+}
